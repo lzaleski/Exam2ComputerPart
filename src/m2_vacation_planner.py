@@ -67,7 +67,7 @@ def gather_items():
         items.append(tems)
     return items
 ###############################################################################
-# TODO: 3. (6 pts)
+# DONE: 3. (6 pts)
 #
 #   For this _TODO_, write a function called main() that will start things off.
 #
