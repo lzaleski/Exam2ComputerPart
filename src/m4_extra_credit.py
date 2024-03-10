@@ -61,48 +61,4 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
-
-def get_toy():
-    toy = input("Please enter a toy: ")
-    return toy
-
-def get_price():
-    price = float(input("Please enter a price: "))
-    return price
-
-def toy_price(toy, price):
-    return (toy, price)
-
-def calculate_total_price(toys):
-    total_cost = 0.0
-
-    for _, price in toys:
-        total_cost += price
-
-    return total_cost
-
-def main():
-    toys_list = []
-
-    while True:
-        toy = get_toy()
-
-        if toy.lower() == 'end':
-            break
-
-        price = get_price()
-
-        if price == 'end':
-            break
-
-        toys_list.append(toy_price(toy, price))
-
-    print("\nToy List:")
-    for toy, price in toys_list:
-        print(f"{toy}: ${price:.2f}")
-
-    total_cost = calculate_total_price(toys_list)
-    print(f"\nTotal Cost: ${total_cost:.2f}")
-
-if __name__ == "__main__":
-    main()
+      
