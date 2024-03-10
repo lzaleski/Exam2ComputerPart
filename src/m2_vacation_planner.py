@@ -2,7 +2,7 @@
 #   prints out a packing list for that vacation type
 
 ###############################################################################
-# TODO: 1. (5 pts)
+# DONE: 1. (5 pts)
 #
 #   For this module, we are going to create a vacation planner that will help
 #   the user plan what they need to bring on vacation.
@@ -28,9 +28,19 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+def starter_list(type):
+    match type:
+        case "beach":
+            return ["swimsuit", "towel", "sunscreen"]
+        case "winter":
+            return ["four pairs of pants", "four long sleeve shirts", "$ for souvenirs "]
+        case "hiking":
+            return ["four pairs of shorts", "a hat", "hiking boots"]
+        case other:
+            []
 
 ###############################################################################
-# TODO: 2. (4 pts)
+# DONE: 2. (4 pts)
 #
 #   Now, perhaps the user would like to bring some of their own stuff that they
 #   specify.
@@ -48,7 +58,14 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
-
+def gather_items():
+    items = []
+    while True:
+        tems = input("Please enter an item: ")
+        if tems.lower() == "end":
+            break
+        items.append(tems)
+    return items
 ###############################################################################
 # TODO: 3. (6 pts)
 #
@@ -76,3 +93,19 @@
 #
 #   Once you have done this, then change the above _TODO_ to DONE.
 ###############################################################################
+def main():
+    list = []
+    print("Hello user, welcome to the computer list generator!")
+
+    type = input("What type of vactation are you going on? (Options: beach, winter, hiking): ")
+    start = starter_list(type)
+    list.extend(start)
+    for i in list:
+        print(i)
+
+    more = gather_items()
+    list.extend(more)
+    for i in list:
+        print(i)
+    print("Goodbye, user. Have fun on Vacation :)")
+main()
